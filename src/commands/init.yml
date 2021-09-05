@@ -5,7 +5,7 @@ description: >
 parameters:
   tool_path:
     type: string
-    default: "./dbm-tools"
+    default: "/temp/dbmaestro"
     description: "Path where the DBmaestroAgent.jar is located"
 steps:
   - run:
