@@ -8,6 +8,6 @@ setup() {
     # Mock environment variables or functions by exporting them (after the script has been sourced)
     export PARAM_TO="World"
     # Capture the output of our "Greet" function
-    result=$(Download)
+    result=$(Greet)
     [ "$result" == "Hello World" ]
 }

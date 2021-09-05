@@ -10,7 +10,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # the temp directory used, within $DIR
 # omit the -p parameter to create a temporal directory in the default location
-DBM_TEMP=`mktemp -d -p "$DIR"`
+DBM_TEMP=$(mktemp -d -p "$DIR")
 
 # check if tmp dir was created
 if [ ! -d "$DBM_TEMP" ]; then
