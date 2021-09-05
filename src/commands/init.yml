@@ -1,0 +1,16 @@
+description: >
+  Ensure environment has DBmaestroAgent.jar
+  If not - download it
+
+parameters:
+  tool_path:
+    type: string
+    default: "./dbm-tools"
+    description: "Path where the DBmaestroAgent.jar is located"
+steps:
+  - download-agent:
+      environment:
+        dbm_tool_path: << parameters.tool_path >>
+      name: Download Agent
+      command: <<include(scripts/download-agent.sh)>>
+      
