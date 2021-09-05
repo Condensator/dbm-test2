@@ -8,7 +8,7 @@ parameters:
     default: "./dbm-tools"
     description: "Path where the DBmaestroAgent.jar is located"
 steps:
-  - download-agent:
+  - run:
       environment:
         dbm_tool_path: << parameters.tool_path >>
       name: Download Agent
