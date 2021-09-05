@@ -13,4 +13,3 @@ steps:
         dbm_tool_path: << parameters.tool_path >>
       name: Download Agent
       command: <<include(scripts/download-agent.sh)>>
-      
