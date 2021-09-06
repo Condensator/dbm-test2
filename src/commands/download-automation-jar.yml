@@ -17,6 +17,6 @@ steps:
       name: Download Agent
       command: <<include(scripts/download-agent.sh)>>
   - save_cache:
-      paths:
-        - "tools/dbmaestro"  # default location
       key: dbmaestro-automation-jar-{{ checksum "DBmaestroAgent.jar" }}
+      paths:
+        - tools/dbmaestro
