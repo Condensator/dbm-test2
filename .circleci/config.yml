@@ -34,6 +34,14 @@ jobs:
       # Push new changes first, before adding new tests to your config.
       - dbm-test2/greet
       - dbm-test2/download-automation-jar
+      - dbm-test2/validate:
+          project_name: "DB2 WOC Test"
+          environment_name: "Release Source"
+          package_name: "V0"
+          server_address: "35.239.85.41:7017"
+          auth_type: "DBmaestroAccount"
+          username: "test@dbmaestro.com"
+          password: "VcuLQPRaGKshEVhbrUEJsrJfJigTmQPB"
 
 workflows:
   # Prior to producing a development orb (which requires credentials) basic validation, linting, and even unit testing can be performed.
