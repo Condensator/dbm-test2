@@ -1,5 +1,5 @@
 Download(){
-export PARAM_DBM_TOOL_PATH = ${!PARAM_DBM_TOOL_PATH}
+export PARAM_DBM_TOOL_PATH=${!PARAM_DBM_TOOL_PATH}
 #Check if dbmaestroagent.jar already exists
 if [ -f "${PARAM_DBM_TOOL_PATH}/DBmaestroAgent.jar" ]; then
     echo "${PARAM_DBM_TOOL_PATH}/DBmaestroAgent.jar already exists."
