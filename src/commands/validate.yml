@@ -8,15 +8,8 @@ parameters:
     default: "~/usr/local/tools/dbmaestro"
     description: "Path where the DBmaestroAgent.jar is located"
 steps:
-  - restore_cache:
-      keys:
-        - dbmaestro-automation-jar-{{ checksum "DBmaestroAgent.jar" }}
   - run:
       environment:
         dbm_tool_path: << parameters.tool_path >>
       name: Download Agent
       command: <<include(scripts/download-agent.sh)>>
-  - save_cache:
-      paths:
-        - << parameters.tool_path >>  # default location
-      key: dbmaestro-automation-jar-{{ checksum "DBmaestroAgent.jar" }}
