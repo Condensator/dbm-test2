@@ -13,7 +13,7 @@ steps:
         - dbmaestro-automation-jar-{{ checksum "DBmaestroAgent.jar" }}
   - run:
       environment:
-        dbm_tool_path: << parameters.tool_path >>
+        PARAM_DBM_TOOL_PATH: << parameters.tool_path >>
       name: Download Agent
       command: <<include(scripts/download-agent.sh)>>
   - save_cache:
