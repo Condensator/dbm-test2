@@ -12,11 +12,11 @@ parameters:
     description: "DBmaestro Automation Agent version"
 steps:
   - restore_cache:
-    keys:
-      - dbmaestro-automation-jar-{{ checksum "DBmaestroAgent.jar" }}
+      keys:
+        - dbmaestro-automation-jar-{{ checksum "DBmaestroAgent.jar" }}
   - download-automation-jar:
-    tool_path: "~/usr/local/tools/dbmaestro"
+      tool_path: "~/usr/local/tools/dbmaestro"
   - save_cache:
-    paths:
-      - ~/usr/local/tools/dbmaestro  # default location
-    key: dbmaestro-automation-jar-{{ checksum "DBmaestroAgent.jar" }}
+      paths:
+        - ~/usr/local/tools/dbmaestro  # default location
+      key: dbmaestro-automation-jar-{{ checksum "DBmaestroAgent.jar" }}
