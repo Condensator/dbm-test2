@@ -33,13 +33,13 @@ parameters:
 steps:
   - run:
       environment:
-        dbm_tool_path: << parameters.tool_path >>
-        dbm_project_name: << parameters.project_name >>
-        dbm_environment_name: << parameters.environment_name >>
-        dbm_package_name: << parameters.package_name >>
-        dbm_server_address: << parameters.server_address >>
-        dbm_auth_type: << parameters.auth_type >>
-        dbm_username: << parameters.username >>
-        dbm_password: << parameters.password >>
+        DBM_TOOL_PATH: << parameters.tool_path >>
+        DBM_PROJECT_NAME: << parameters.project_name >>
+        DBM_ENVIRONMENT_NAME: << parameters.environment_name >>
+        DBM_PACKAGE_NAME: << parameters.package_name >>
+        DBM_SERVER_ADDRESS: << parameters.server_address >>
+        DBM_AUTH_TYPE: << parameters.auth_type >>
+        DBM_USERNAME: << parameters.username >>
+        DBM_PASSWORD: << parameters.password >>
       name: Validate environment
       command: java -jar "$DBM_TOOL_PATH/DBmaestroAgent.jar" -Validate -ProjectName "$DBM_PROJECT_NAME" -EnvName "$DBM_ENVIRONMENT_NAME" -PackageName "$DBM_PACKAGE_NAME" -Server "$DBM_SERVER_ADDRESS" -AuthType "$DBM_AUTH_TYPE" -UserName "$DBM_USERNAME" -Password "$DBM_PASSWORD"
