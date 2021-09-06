@@ -29,6 +29,8 @@ trap cleanup EXIT
 
 # Download and unzip jar
 wget https://dbmaestro.com/Downloads/DOP-X/Utilities/DBmaestroAgent.zip -O "$DBM_TEMP/DBmaestroAgent.zip"
+echo "${PARAM_DBM_TOOL_PATH}"
+mkdir "${PARAM_DBM_TOOL_PATH}"
 unzip "$DBM_TEMP/DBmaestroAgent.zip" -d "${PARAM_DBM_TOOL_PATH}"
 echo "Downlaod completed"
 }

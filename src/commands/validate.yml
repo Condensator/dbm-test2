@@ -7,6 +7,19 @@ parameters:
     type: string
     default: "~/usr/local/tools/dbmaestro"
     description: "Path where the DBmaestroAgent.jar is located"
+  project_name:
+    type: string
+    description: "DBmaestro project name"
+  environment_name:
+    type: string
+    description: "DBmaestro environment name"
+  package_name: 
+    type: string
+    default: "@currentversion"
+    description: "DBmaestro package name. By default runs validation against current version"
+  server_address:
+    type: string
+    description: "DBmaestro server address"
 steps:
   - run:
       environment:
