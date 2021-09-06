@@ -1,7 +1,8 @@
 Download(){
+export PARAM_DBM_TOOL_PATH = ${!PARAM_DBM_TOOL_PATH}
 #Check if dbmaestroagent.jar already exists
-if [ -f "${!PARAM_DBM_TOOL_PATH}/DBmaestroAgent.jar" ]; then
-    echo "${!PARAM_DBM_TOOL_PATH}/DBmaestroAgent.jar already exists."
+if [ -f "${PARAM_DBM_TOOL_PATH}/DBmaestroAgent.jar" ]; then
+    echo "${PARAM_DBM_TOOL_PATH}/DBmaestroAgent.jar already exists."
     exit 0
 fi
 
@@ -29,9 +30,9 @@ trap cleanup EXIT
 
 # Download and unzip jar
 wget https://dbmaestro.com/Downloads/DOP-X/Utilities/DBmaestroAgent.zip -O "$DBM_TEMP/DBmaestroAgent.zip"
-echo "${!PARAM_DBM_TOOL_PATH}"
-mkdir "${!PARAM_DBM_TOOL_PATH}"
-unzip "$DBM_TEMP/DBmaestroAgent.zip" -d "${!PARAM_DBM_TOOL_PATH}"
+echo "${PARAM_DBM_TOOL_PATH}"
+mkdir "${PARAM_DBM_TOOL_PATH}"
+unzip "$DBM_TEMP/DBmaestroAgent.zip" -d "${PARAM_DBM_TOOL_PATH}"
 echo "Downlaod completed"
 }
 
