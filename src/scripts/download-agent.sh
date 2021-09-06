@@ -1,7 +1,8 @@
 Download(){
+export DBM_TOOL_PATH=${PARAM_DBM_TOOL_PATH}
 #Check if dbmaestroagent.jar already exists
-if [ -f "${PARAM_DBM_TOOL_PATH}/DBmaestroAgent.jar" ]; then
-    echo "${PARAM_DBM_TOOL_PATH}/DBmaestroAgent.jar already exists."
+if [ -f "${DBM_TOOL_PATH}/DBmaestroAgent.jar" ]; then
+    echo "${DBM_TOOL_PATH}/DBmaestroAgent.jar already exists."
     exit 0
 fi
 
@@ -10,7 +11,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # the temp directory used, within $DIR
 # omit the -p parameter to create a temporal directory in the default location
-DBM_TEMP=`mktemp -d -p "$DIR"`
+DBM_TEMP=$(mktemp -d -p "$DIR")
 
 # check if tmp dir was created
 if [ ! -d "$DBM_TEMP" ]; then
@@ -29,7 +30,9 @@ trap cleanup EXIT
 
 # Download and unzip jar
 wget https://dbmaestro.com/Downloads/DOP-X/Utilities/DBmaestroAgent.zip -O "$DBM_TEMP/DBmaestroAgent.zip"
-unzip "$DBM_TEMP/DBmaestroAgent.zip" -d "${PARAM_DBM_TOOL_PATH}"
+echo "${DBM_TOOL_PATH}"
+mkdir -p "${DBM_TOOL_PATH}"
+unzip "$DBM_TEMP/DBmaestroAgent.zip" -d "${DBM_TOOL_PATH}"
 echo "Downlaod completed"
 }
 
