@@ -20,4 +20,3 @@ steps:
       key: dbmaestro-automation-jar-{{ checksum "DBmaestroAgent.jar" }}
       paths:
           - tools/dbmaestro
-          - tools/dbmaestro/DBmaestroAgent.jar
