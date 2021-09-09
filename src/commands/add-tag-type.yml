@@ -1,6 +1,5 @@
 description: >
-  Ensure environment has DBmaestroAgent.jar
-  If not - download it
+  Add a Tag Type to the DBmaestro DevOps Platform
 
 parameters:
   tool_path:
