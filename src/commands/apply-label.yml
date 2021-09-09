@@ -1,6 +1,6 @@
 description: >
   Perform Apply Label operation on an Environment
-  
+
 parameters:
   tool_path:
     type: string

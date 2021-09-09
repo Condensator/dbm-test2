@@ -1,6 +1,6 @@
 description: >
   Assign a Tag to an Object
-  
+
 parameters:
   tool_path:
     type: string
