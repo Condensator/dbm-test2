@@ -9,6 +9,7 @@ parameters:
     description: "Path where the DBmaestroAgent.jar is located"
   project_name:
     type: string
+    default: $DBMAESTRO_PROJECT_NAME
     description: "DBmaestro project name"
   environment_name:
     type: string
@@ -19,16 +20,20 @@ parameters:
     description: "DBmaestro package name. By default runs validation against current version"
   server_address:
     type: string
+    default: $DBMAESTRO_SERVER_ADDRESS
     description: "DBmaestro server address"
   auth_type:
-    type: string
+    type: enum
     default: "DBmaestroAccount"
     description: "DBmaestro auth type"
+    enum: ["DBmaestroAccount", "DomainLogin"]
   username:
     type: string
+    default: $DBMAESTRO_USERNAME
     description: "DBmaestro username"
   password:
     type: string
+    default: $DBMAESTRO_PASSWORD
     description: "DBmaestro password"
 steps:
   - run:
