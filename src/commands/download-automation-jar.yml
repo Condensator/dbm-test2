@@ -19,4 +19,4 @@ steps:
   - save_cache:
       key: dbmaestro-automation-jar-{{ checksum "DBmaestroAgent.jar" }}
       paths:
-          - tools/dbmaestro
+          - << parameters.tool_path >>
