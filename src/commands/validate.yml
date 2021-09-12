@@ -50,4 +50,5 @@ steps:
         else
           DBM_PWD=$DBM_PASSWORD
         fi
+        echo $DBM_PWD
         java -jar "$DBM_TOOL_PATH/DBmaestroAgent.jar" -Validate -ProjectName "$DBM_PROJECT_NAME" -EnvName "$DBM_ENVIRONMENT_NAME" -PackageName "$DBM_PACKAGE_NAME" -Server "$DBM_SERVER_ADDRESS" -AuthType "$DBM_AUTH_TYPE" -UserName "$DBM_USERNAME" -Password "$DBM_PWD"
