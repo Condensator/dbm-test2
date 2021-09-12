@@ -76,4 +76,4 @@ steps:
         DBM_USERNAME: << parameters.username >>
         DBM_PASSWORD: << parameters.password >>
       name: Add tag
-      command: <<include(scripts/backup-environment.sh)>>
+      command: <<include(scripts/build.sh)>>
