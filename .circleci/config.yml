@@ -32,7 +32,6 @@ jobs:
       # "greet" is a sample command packaged with this orb config.
       # This sample integration test will run as long as the greet command exists. Once you remove the greet command you should remove this line.
       # Push new changes first, before adding new tests to your config.
-      - dbm-test2/greet
       - dbm-test2/download-automation-jar
       - dbm-test2/validate:
           project_name: "CircleTest1"
@@ -41,7 +40,7 @@ jobs:
           server_address: "35.239.85.41:7017"
           auth_type: "DBmaestroAccount"
           username: "test@dbmaestro.com"
-          password: "VcuLQPRaGKshEVhbrUEJsrJfJigTmQPB"
+          #password: "VcuLQPRaGKshEVhbrUEJsrJfJigTmQPB"
 
 workflows:
   # Prior to producing a development orb (which requires credentials) basic validation, linting, and even unit testing can be performed.
