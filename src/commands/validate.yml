@@ -46,8 +46,12 @@ steps:
       command: |
         if [ -n ${DBM_PASSWORD} ]
         then
+          echo "Using global variable"
+          echo $DBMAESTRO_PASSWORD
           DBM_PWD=$DBMAESTRO_PASSWORD
         else
+          echo "Using global variable"
+          echo $DBM_PASSWORD
           DBM_PWD=$DBM_PASSWORD
         fi
         echo $DBM_PWD
