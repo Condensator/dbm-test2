@@ -14,15 +14,19 @@ parameters:
     description: "DBmaestro environment name."
   from_date:
     type: string
+    default: ""
     description: "Start date from which to check."
   to_date:
     type: string
+    default: ""
     description: "End date up to which to check."
   date_format:
     type: string
+    default: ""
     description: "Java SimpleDateFormat."
   file_path:
     type: string
+    default: ""
     description: "Full .json file path to project."
   server_address:
     type: string

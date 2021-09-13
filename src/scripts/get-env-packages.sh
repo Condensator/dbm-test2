@@ -11,7 +11,7 @@ GetEnvPackages(){
     fi
     CMDLINE='java -jar "'$DBM_TOOL_PATH'/DBmaestroAgent.jar" -GetEnvPackages -ProjectName "'$DBM_PROJECT_NAME'" -EnvName "'$DBM_ENVIRONMENT_NAME'"'
     if [[  -n ${DBM_FROM_DATE} ]]; then
-        CMDLINE=$CMDLINE'-FromDate "'$DBM_FROM_DATE' "'
+        CMDLINE=$CMDLINE' -FromDate "'$DBM_FROM_DATE' "'
     fi
     if [[  -n ${DBM_TO_DATE} ]]; then
         CMDLINE=$CMDLINE'-ToDate "'$DBM_TO_DATE' "'
