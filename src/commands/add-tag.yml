@@ -9,7 +9,7 @@ description: >
 parameters:
   tool_path:
     type: string
-    default: "tools/dbmaestro"
+    default: "./tools/dbmaestro"
     description: "Path where the DBmaestroAgent.jar is located"
   project_name:
     type: string
