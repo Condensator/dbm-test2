@@ -2,6 +2,7 @@
 
 AddTag(){
 ls -R
+java -version
     if [ -z "$DBM_PASSWORD" ]
     then
       echo "Using global password variable"
