@@ -14,7 +14,7 @@ BackupEnvironment(){
         CMDLINE=$CMDLINE'-BackupDescription "'$DBM_BACKUP_DESCRIPTION'"'
     fi
     CMDLINE=$CMDLINE' -Server "'$DBM_SERVER_ADDRESS'" -AuthType "'$DBM_AUTH_TYPE'" -UserName "'$DBM_USERNAME'" -Password "'$DBM_PWD'"'
-    "$CMDLINE"
+    eval "$CMDLINE"
 }
 
 # Will not run if sourced for bats-core tests.
