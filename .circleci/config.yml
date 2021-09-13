@@ -40,11 +40,14 @@ jobs:
           server_address: "35.239.85.41:7017"
           auth_type: "DBmaestroAccount"
           username: "test@dbmaestro.com"
-      - dbm-test2/add-tag-type:
-          tag_type_name: "INTEGRATIONTEST"
+      - dbm-test2/add-tag:
+          project_name: "CircleTest1"
+          package_name: "V0"
+          tag_type_name: "Task"
+          tag_name: "TestTag"
           server_address: "35.239.85.41:7017"
           auth_type: "DBmaestroAccount"
-          username: "test@dbmaestro.com"
+          username: "test@dbmaestro.com" 
       - dbm-test2/apply-label:
           project_name: "CircleTest1"
           environment_name: "Release Source"
