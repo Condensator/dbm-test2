@@ -22,9 +22,11 @@ parameters:
     description: "DBmaestro tag name."
   object_type_name:
     type: string
+    default: ""
     description: "DBmaestro object type name."
   object_name:
     type: string
+    default: ""
     description: "DBmaestro object name."
   server_address:
     type: string
