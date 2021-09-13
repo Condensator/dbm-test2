@@ -24,5 +24,5 @@ TransferDownPackage(){
 # View src/tests for more information.
 ORB_TEST_ENV="bats-core"
 if [ "${0#*$ORB_TEST_ENV}" == "$0" ]; then
-    Greet
+    TransferDownPackage
 fi
