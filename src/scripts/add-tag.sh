@@ -24,7 +24,7 @@ java -version
         CMDLINE=$CMDLINE'-ObjectTypeName "'$OBJ_TYPE_NAME'" -ObjectName "'$OBJ_NAME'"'
     fi
     CMDLINE=$CMDLINE' -Server "'$DBM_SERVER_ADDRESS'" -AuthType "'$DBM_AUTH_TYPE'" -UserName "'$DBM_USERNAME'" -Password "'$DBM_PWD'"'
-    echo $CMDLINE
+    echo "$CMDLINE"
     java -jar  "$DBM_TOOL_PATH"/DBmaestroAgent.jar"$CMDLINE"
 }
 
