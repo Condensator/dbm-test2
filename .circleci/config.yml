@@ -34,12 +34,12 @@ jobs:
       # Push new changes first, before adding new tests to your config.
       #- run: wget -O /dev/stdout 35.239.85.41:7000/run/run
       - dbm-test2/download-automation-jar
-      - dbm-test2/get-env-packages:
-          project_name: "CircleTest1"
-          environment_name: "Release Source"
-          server_address: "35.239.85.41:7017"
-          auth_type: "DBmaestroAccount"
-          username: "test@dbmaestro.com"
+      # - dbm-test2/get-env-packages:
+      #     project_name: "CircleTest1"
+      #     environment_name: "Release Source"
+      #     server_address: "35.239.85.41:7017"
+      #     auth_type: "DBmaestroAccount"
+      #     username: "test@dbmaestro.com"
       - dbm-test2/validate:
           project_name: "CircleTest1"
           environment_name: "Release Source"
