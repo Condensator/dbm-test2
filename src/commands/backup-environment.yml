@@ -21,7 +21,7 @@ parameters:
     description: "Backup description."
   ignore_env_version_mismatch:
     type: enum
-    default: "False"
+    default: "True"
     description: "Ignore environment version mismatch"
     enum: ["True", "False"]
   server_address:
@@ -58,5 +58,5 @@ steps:
         DBM_AUTH_TYPE: << parameters.auth_type >>
         DBM_USERNAME: << parameters.username >>
         DBM_PASSWORD: << parameters.password >>
-      name: Add tag
+      name: Backup environment
       command: <<include(scripts/backup-environment.sh)>>
