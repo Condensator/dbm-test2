@@ -21,6 +21,7 @@ CustomBuild(){
         CMDLINE=$CMDLINE'-TargetLabelName "'$DBM_TARGET_LABEL_NAME' "'
     fi
     CMDLINE=$CMDLINE' -Server "'$DBM_SERVER_ADDRESS'" -AuthType "'$DBM_AUTH_TYPE'" -UserName "'$DBM_USERNAME'" -Password "'$DBM_PWD'"'
+    echo "$CMDLINE"
     eval "$CMDLINE"
 }
 
