@@ -1,8 +1,6 @@
 #!/bin/bash
 
 AddTag(){
-ls -R
-java -version
     if [ -z "$DBM_PASSWORD" ]
     then
       echo "Using global password variable"
@@ -19,14 +17,12 @@ java -version
           echo "Using local password variable"
           DBM_PWD=$DBM_PASSWORD
         fi
-    CMDLINE=' -AddTag -ProjectName "'$DBM_PROJECT_NAME'" -PackageName "'$DBM_PACKAGE_NAME'" -TagTypeName "'$DBM_TAG_TYPE_NAME'" -TagName "'$DBM_TAG_NAME'"'
+    CMDLINE='java -jar "'$DBM_TOOL_PATH'/DBmaestroAgent.jar" -AddTag -ProjectName "'$DBM_PROJECT_NAME'" -PackageName "'$DBM_PACKAGE_NAME'" -TagTypeName "'$DBM_TAG_TYPE_NAME'" -TagName "'$DBM_TAG_NAME'"'
     if [[  -n ${OBJ_TYPE_NAME} &&  -n ${OBJ_NAME} ]]; then
         CMDLINE=$CMDLINE'-ObjectTypeName "'$OBJ_TYPE_NAME'" -ObjectName "'$OBJ_NAME'"'
     fi
     CMDLINE=$CMDLINE' -Server "'$DBM_SERVER_ADDRESS'" -AuthType "'$DBM_AUTH_TYPE'" -UserName "'$DBM_USERNAME'" -Password "'$DBM_PWD'"'
-    echo "$CMDLINE"
-    DBM_TOOL_PATH=$DBM_TOOL_PATH"/DBmaestroAgent.jar"
-    java -jar  tools/dbmaestro/DBmaestroAgent.jar "$CMDLINE"
+    eval "$CMDLINE"
 }
 
 # Will not run if sourced for bats-core tests.
