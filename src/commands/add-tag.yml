@@ -11,9 +11,12 @@ parameters:
     type: string
     default: "tools/dbmaestro"
     description: "Path where the DBmaestroAgent.jar is located"
-  package_name:
+  project_name:
     type: string
     description: "DBmaestro project name"
+  package_name:
+    type: string
+    description: "DBmaestro package name"
   tag_type_name:
     type: string
     description: "DBmaestro tag type name."
