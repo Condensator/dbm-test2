@@ -40,6 +40,16 @@ jobs:
           server_address: "35.239.85.41:7017"
           auth_type: "DBmaestroAccount"
           username: "test@dbmaestro.com"
+      - dbm-test2/get-roles:
+          file_path: "~/roles.json"
+          server_address: "35.239.85.41:7017"
+          auth_type: "DBmaestroAccount"
+          username: "test@dbmaestro.com"
+      - dbm-test2/get-user-project-roles:
+          file_path: "~/userroles.json"
+          server_address: "35.239.85.41:7017"
+          auth_type: "DBmaestroAccount"
+          username: "test@dbmaestro.com"
       - dbm-test2/validate:
           project_name: "CircleTest1"
           environment_name: "Release Source"

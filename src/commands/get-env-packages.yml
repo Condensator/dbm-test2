@@ -63,5 +63,5 @@ steps:
         DBM_AUTH_TYPE: << parameters.auth_type >>
         DBM_USERNAME: << parameters.username >>
         DBM_PASSWORD: << parameters.password >>
-      name: Add tag
+      name: Get environment packages
       command: <<include(scripts/get-env-packages.sh)>>
