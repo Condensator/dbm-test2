@@ -71,6 +71,7 @@ steps:
         DBM_PACKAGE_NAME: << parameters.package_name >>
         DBM_VERSION_LEVEL: << parameters.version_level >>
         DBM_AFTER_CURRENT_DEPLOYED_VERSION: << parameters.after_current_deployed_version >>
+        DBM_SERVER_ADDRESS: << parameters.server_address >>
         DBM_USE_SSL: << parameters.use_ssl >>
         DBM_AUTH_TYPE: << parameters.auth_type >>
         DBM_USERNAME: << parameters.username >>
