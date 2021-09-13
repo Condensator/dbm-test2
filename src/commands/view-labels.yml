@@ -38,8 +38,6 @@ steps:
         DBM_TOOL_PATH: << parameters.tool_path >>
         DBM_PROJECT_NAME: << parameters.project_name >>
         DBM_ENVIRONMENT_NAME: << parameters.environment_name >>
-        DBM_LABEL_NAME: << parameters.label_name >>
-        DBM_LABEL_DESCRIPTION: << parameters.label_description >>
         DBM_SERVER_ADDRESS: << parameters.server_address >>
         DBM_USE_SSL: << parameters.use_ssl >>
         DBM_AUTH_TYPE: << parameters.auth_type >>
