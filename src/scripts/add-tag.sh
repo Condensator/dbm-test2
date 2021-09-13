@@ -19,12 +19,12 @@ java -version
           echo "Using local password variable"
           DBM_PWD=$DBM_PASSWORD
         fi
-    CMDLINE=' "'$DBM_TOOL_PATH'/DBmaestroAgent.jar" -AddTag -ProjectName "'$DBM_PROJECT_NAME'" -PackageName "'$DBM_PACKAGE_NAME'" -TagTypeName "'$DBM_TAG_TYPE_NAME'" -TagName "'$DBM_TAG_NAME'"'
+    CMDLINE=' -AddTag -ProjectName "'$DBM_PROJECT_NAME'" -PackageName "'$DBM_PACKAGE_NAME'" -TagTypeName "'$DBM_TAG_TYPE_NAME'" -TagName "'$DBM_TAG_NAME'"'
     if [[  -n ${OBJ_TYPE_NAME} &&  -n ${OBJ_NAME} ]]; then
         CMDLINE=$CMDLINE'-ObjectTypeName "'$OBJ_TYPE_NAME'" -ObjectName "'$OBJ_NAME'"'
     fi
     CMDLINE=$CMDLINE' -Server "'$DBM_SERVER_ADDRESS'" -AuthType "'$DBM_AUTH_TYPE'" -UserName "'$DBM_USERNAME'" -Password "'$DBM_PWD'"'
-    java -jar "$CMDLINE"
+    java -jar  $DBM_TOOL_PATH/DBmaestroAgent.jar "$CMDLINE"
 }
 
 # Will not run if sourced for bats-core tests.
