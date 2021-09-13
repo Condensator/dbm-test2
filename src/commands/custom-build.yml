@@ -78,6 +78,7 @@ steps:
         DBM_SOURCE_LABEL_NAME: << parameters.source_label_name >>
         DBM_TARGET_VERSION_TYPE: << parameters.target_version_type >>
         DBM_TARGET_LABEL_NAME: << parameters.target_label_name >>
+        DBM_SERVER_ADDRESS: << parameters.server_address >>
         DBM_USE_SSL: << parameters.use_ssl >>
         DBM_AUTH_TYPE: << parameters.auth_type >>
         DBM_USERNAME: << parameters.username >>
