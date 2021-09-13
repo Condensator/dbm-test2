@@ -1,7 +1,7 @@
 #!/bin/bash
 
 AddTag(){
-  pwd
+ls -R
     if [ -z "$DBM_PASSWORD" ]
     then
       echo "Using global password variable"
