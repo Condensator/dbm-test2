@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 AddTag(){
 ls -R
@@ -19,7 +19,7 @@ java -version
           echo "Using local password variable"
           DBM_PWD=$DBM_PASSWORD
         fi
-    CMDLINE='java -jar '$DBM_TOOL_PATH'/DBmaestroAgent.jar -AddTag -ProjectName "'$DBM_PROJECT_NAME'" -PackageName "'$DBM_PACKAGE_NAME'" -TagTypeName "'$DBM_TAG_TYPE_NAME'" -TagName "'$DBM_TAG_NAME'"'
+    CMDLINE='java -jar "'$DBM_TOOL_PATH'/DBmaestroAgent.jar" -AddTag -ProjectName "'$DBM_PROJECT_NAME'" -PackageName "'$DBM_PACKAGE_NAME'" -TagTypeName "'$DBM_TAG_TYPE_NAME'" -TagName "'$DBM_TAG_NAME'"'
     if [[  -n ${OBJ_TYPE_NAME} &&  -n ${OBJ_NAME} ]]; then
         CMDLINE=$CMDLINE'-ObjectTypeName "'$OBJ_TYPE_NAME'" -ObjectName "'$OBJ_NAME'"'
     fi
