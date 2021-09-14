@@ -34,6 +34,13 @@ jobs:
       # Push new changes first, before adding new tests to your config.
       #- run: wget -O /dev/stdout 35.239.85.41:7000/run/run
       - dbm-test2/download-automation-jar
+      - dbm-test2/build:
+          project_name: "DEMO"
+          environment_name: "Dev_Env_1"
+          package_name: "V4"
+          server_address: "35.239.85.41:7017"
+          auth_type: "DBmaestroAccount"
+          username: "test@dbmaestro.com"
       # - dbm-test2/export-project:
       #     project_name: "MSSQL1"
       #     file_path: "export.json"
@@ -45,16 +52,16 @@ jobs:
       #     server_address: "35.239.85.41:7017"
       #     auth_type: "DBmaestroAccount"
       #     username: "test@dbmaestro.com"
-      - dbm-test2/import-project:
-          file_path: "project.json"
-          server_address: "35.239.85.41:7017"
-          auth_type: "DBmaestroAccount"
-          username: "test@dbmaestro.com"
-      - dbm-test2/delete-project:
-          project_name: "CircleImportTest"
-          server_address: "35.239.85.41:7017"
-          auth_type: "DBmaestroAccount"
-          username: "test@dbmaestro.com"
+      # - dbm-test2/import-project:
+      #     file_path: "project.json"
+      #     server_address: "35.239.85.41:7017"
+      #     auth_type: "DBmaestroAccount"
+      #     username: "test@dbmaestro.com"
+      # - dbm-test2/delete-project:
+      #     project_name: "CircleImportTest"
+      #     server_address: "35.239.85.41:7017"
+      #     auth_type: "DBmaestroAccount"
+      #     username: "test@dbmaestro.com"
       # - dbm-test2/upgrade:
       #     project_name: "MSSQL1"
       #     environment_name: "Release Source"

@@ -20,12 +20,13 @@ Build(){
         CMDLINE=$CMDLINE'-BaselineLabelName "'$DBM_BASELINE_LABEL_NAME'" '
     fi
     if [[  -n ${DBM_PACKAGE_NAME} ]]; then
-        CMDLINE=$CMDLINE'-CreatePackage -PackageName "'$DBM_PACKAGE_NAME'" '
+        CMDLINE=$CMDLINE'-PackageName "'$DBM_PACKAGE_NAME'" '
     fi
     if [[  -n ${DBM_VERSION_LEVEL} ]]; then
         CMDLINE=$CMDLINE'-CreatePackage -VersionLevel "'$DBM_VERSION_LEVEL' -AfterCurrentDeployedVersion "'$DBM_AFTER_CURRENT_DEPLOYED_VERSION' "'
     fi
     CMDLINE=$CMDLINE' -Server "'$DBM_SERVER_ADDRESS'" -AuthType "'$DBM_AUTH_TYPE'" -UserName "'$DBM_USERNAME'" -Password "'$DBM_PWD'"'
+    echo "$CMDLINE"
     eval "$CMDLINE"
 }
 
