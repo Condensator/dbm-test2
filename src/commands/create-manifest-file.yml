@@ -1,0 +1,39 @@
+description: >
+  Create or Update a Package manifest file
+
+parameters:
+  tool_path:
+    type: string
+    default: "tools/dbmaestro"
+    description: "Path where the DBmaestroAgent.jar is located"
+  path_to_scripts_folder:
+    type: string
+    description: "Path to sripts folder"
+  operation:
+    type: enum
+    description: "Package operation"
+    default: "CreateOrUpdate"
+    enum: ["CreateOrUpdate", "Create", "Update"]
+  scripts_order_scope:
+    type: enum
+    description: "Scripts order scope"
+    default: "Global"
+    enum: ["Global", "Schema"]
+steps:
+  - run:
+      environment:
+        DBM_TOOL_PATH: << parameters.tool_path >>
+        DBM_PATH_TO_SCRIPTS_FOLDER: << parameters.path_to_scripts_folder >>
+        DBM_OPERATION: << parameters.operation >>
+        DBM_SCRIPTS_ORDER_SCOPE: << parameters.scripts_order_scope >>
+      name: Create manifest file
+      command: |
+        if [ -z "$DBM_PASSWORD" ]
+        then
+          echo "Using global password variable"
+          DBM_PWD=$DBMAESTRO_PASSWORD
+        else
+          echo "Using local password variable"
+          DBM_PWD=$DBM_PASSWORD
+        fi
+        java -jar "$DBM_TOOL_PATH/DBmaestroAgent.jar" -CreateManifestFile -PathToScriptsFolder "$DBM_PATH_TO_SCRIPTS_FOLDER" -Operation "$DBM_OPERATION" -ScriptsOrderScope "$DBM_SCRIPTS_ORDER_SCOPE"

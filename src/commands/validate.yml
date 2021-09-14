@@ -9,7 +9,6 @@ parameters:
     description: "Path where the DBmaestroAgent.jar is located"
   project_name:
     type: string
-    default: $DBMAESTRO_PROJECT_NAME
     description: "DBmaestro project name"
   environment_name:
     type: string
@@ -20,8 +19,12 @@ parameters:
     description: "DBmaestro package name. By default runs validation against current version"
   server_address:
     type: string
-    default: $DBMAESTRO_SERVER_ADDRESS
     description: "DBmaestro server address"
+  use_ssl:
+    type: enum
+    description: "Use or don't use SSL/https protocol to connect to the DBmaestro agent. Default is n."
+    default: "n"
+    enum: ["y", "n"]
   auth_type:
     type: enum
     default: "DBmaestroAccount"
@@ -29,11 +32,10 @@ parameters:
     enum: ["DBmaestroAccount", "DomainLogin"]
   username:
     type: string
-    default: $DBMAESTRO_USERNAME
     description: "DBmaestro username"
   password:
     type: string
-    default: $DBMAESTRO_PASSWORD
+    default: ""
     description: "DBmaestro password"
 steps:
   - run:
@@ -43,8 +45,18 @@ steps:
         DBM_ENVIRONMENT_NAME: << parameters.environment_name >>
         DBM_PACKAGE_NAME: << parameters.package_name >>
         DBM_SERVER_ADDRESS: << parameters.server_address >>
+        DBM_USE_SSL: << parameters.use_ssl >>
         DBM_AUTH_TYPE: << parameters.auth_type >>
         DBM_USERNAME: << parameters.username >>
         DBM_PASSWORD: << parameters.password >>
       name: Validate environment
-      command: java -jar "$DBM_TOOL_PATH/DBmaestroAgent.jar" -Validate -ProjectName "$DBM_PROJECT_NAME" -EnvName "$DBM_ENVIRONMENT_NAME" -PackageName "$DBM_PACKAGE_NAME" -Server "$DBM_SERVER_ADDRESS" -AuthType "$DBM_AUTH_TYPE" -UserName "$DBM_USERNAME" -Password "$DBM_PASSWORD"
+      command: |
+        if [ -z "$DBM_PASSWORD" ]
+        then
+          echo "Using global password variable"
+          DBM_PWD=$DBMAESTRO_PASSWORD
+        else
+          echo "Using local password variable"
+          DBM_PWD=$DBM_PASSWORD
+        fi
+        java -jar "$DBM_TOOL_PATH/DBmaestroAgent.jar" -Validate -ProjectName "$DBM_PROJECT_NAME" -EnvName "$DBM_ENVIRONMENT_NAME" -PackageName "$DBM_PACKAGE_NAME" -Server "$DBM_SERVER_ADDRESS" -UseSSL "$DBM_USE_SSL" -AuthType "$DBM_AUTH_TYPE" -UserName "$DBM_USERNAME" -Password "$DBM_PWD"

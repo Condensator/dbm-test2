@@ -1,10 +1,5 @@
 description: >
-  Assign a Tag to an Object
-
-  - A Tag is a text descriptor for assigning attributes, properties and metadata to a package or script. For example, a Jenkins build number or build date.
-  - A Tag must be associated with a Tag Type. Therefore, both the Tag Name and Tag Type Name must be specified.
-  - A Tag may also be assigned to an Object through the DBmaestro DevOps Platform or by a package manifest.
-  - An Object Name can be associated with more than one Object Type. Therefore, if ObjectName is specified, then ObjectTypeName must also be specified
+  Delete a Tag from an Object
 
 parameters:
   tool_path:
@@ -14,9 +9,9 @@ parameters:
   project_name:
     type: string
     description: "DBmaestro project name"
-  package_name:
+  environment_name:
     type: string
-    description: "DBmaestro package name"
+    description: "DBmaestro environment name"
   tag_type_name:
     type: string
     description: "DBmaestro tag type name."
@@ -25,11 +20,9 @@ parameters:
     description: "DBmaestro tag name."
   object_type_name:
     type: string
-    default: ""
     description: "DBmaestro object type name."
   object_name:
     type: string
-    default: ""
     description: "DBmaestro object name."
   server_address:
     type: string
@@ -56,7 +49,7 @@ steps:
       environment:
         DBM_TOOL_PATH: << parameters.tool_path >>
         DBM_PROJECT_NAME: << parameters.project_name >>
-        DBM_PACKAGE_NAME: << parameters.package_name >>
+        DBM_ENVIRONMENT_NAME: << parameters.environment_name >>
         DBM_TAG_TYPE_NAME: << parameters.tag_type_name >>
         DBM_TAG_NAME: << parameters.tag_name >>
         DBM_OBJECT_TYPE_NAME: << parameters.object_type_name >>
@@ -67,4 +60,4 @@ steps:
         DBM_USERNAME: << parameters.username >>
         DBM_PASSWORD: << parameters.password >>
       name: Add tag
-      command: <<include(scripts/add-tag.sh)>>
+      command: <<include(scripts/delete-tag.sh)>>

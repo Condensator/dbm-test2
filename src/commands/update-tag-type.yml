@@ -12,6 +12,9 @@ parameters:
   tag_type_name:
     type: string
     description: "DBmaestro tag type name."
+  new_tag_type_name:
+    type: string
+    description: "New tag type name."
   server_address:
     type: string
     description: "DBmaestro server address"
@@ -37,6 +40,7 @@ steps:
       environment:
         DBM_TOOL_PATH: << parameters.tool_path >>
         DBM_TAG_TYPE_NAME: << parameters.tag_type_name >>
+        DBM_NEW_TAG_TYPE_NAME: << parameters.tag_type_name >>
         DBM_SERVER_ADDRESS: << parameters.server_address >>
         DBM_USE_SSL: << parameters.use_ssl >>
         DBM_AUTH_TYPE: << parameters.auth_type >>
@@ -52,4 +56,4 @@ steps:
           echo "Using local password variable"
           DBM_PWD=$DBM_PASSWORD
         fi
-        java -jar "$DBM_TOOL_PATH/DBmaestroAgent.jar" -AddTagType -TagTypeName "$DBM_TAG_TYPE_NAME" -Server "$DBM_SERVER_ADDRESS" -AuthType "$DBM_AUTH_TYPE" -UserName "$DBM_USERNAME" -Password "$DBM_PWD"
+        java -jar "$DBM_TOOL_PATH/DBmaestroAgent.jar" -UpdateTagTypeName -TagTypeName "$DBM_TAG_TYPE_NAME" -NewTagTypeName "$DBM_NEW_TAG_TYPE_NAME" -Server "$DBM_SERVER_ADDRESS" -AuthType "$DBM_AUTH_TYPE" -UserName "$DBM_USERNAME" -Password "$DBM_PWD"

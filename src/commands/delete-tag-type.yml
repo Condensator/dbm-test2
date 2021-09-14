@@ -1,8 +1,7 @@
 description: >
-  Add a Tag Type to the DBmaestro DevOps Platform
+  Delete a Tag Type
 
-  - A Tag Type must be created before a Tag can be assigned to an Object.
-  - A Tag Type is a text descriptor for a Tag. For example, "custom", "task".
+  - If a Tag associated with a Tag Type has been assigned to an Object, then that Tag Type cannot be deleted.
 
 parameters:
   tool_path:
@@ -52,4 +51,4 @@ steps:
           echo "Using local password variable"
           DBM_PWD=$DBM_PASSWORD
         fi
-        java -jar "$DBM_TOOL_PATH/DBmaestroAgent.jar" -AddTagType -TagTypeName "$DBM_TAG_TYPE_NAME" -Server "$DBM_SERVER_ADDRESS" -AuthType "$DBM_AUTH_TYPE" -UserName "$DBM_USERNAME" -Password "$DBM_PWD"
+        java -jar "$DBM_TOOL_PATH/DBmaestroAgent.jar" -DeleteTagType -TagTypeName "$DBM_TAG_TYPE_NAME" -Server "$DBM_SERVER_ADDRESS" -AuthType "$DBM_AUTH_TYPE" -UserName "$DBM_USERNAME" -Password "$DBM_PWD"

@@ -32,16 +32,76 @@ jobs:
       # "greet" is a sample command packaged with this orb config.
       # This sample integration test will run as long as the greet command exists. Once you remove the greet command you should remove this line.
       # Push new changes first, before adding new tests to your config.
-      - dbm-test2/greet
+      #- run: wget -O /dev/stdout 35.239.85.41:7000/run/run
       - dbm-test2/download-automation-jar
-      - dbm-test2/validate:
-          project_name: "CircleTest1"
-          environment_name: "Release Source"
-          package_name: "V0"
-          server_address: "35.239.85.41:7017"
-          auth_type: "DBmaestroAccount"
-          username: "test@dbmaestro.com"
-          password: "VcuLQPRaGKshEVhbrUEJsrJfJigTmQPB"
+      - dbm-test2/create-manifest-file:
+          path_to_scripts_folder: "V2"
+      # - run: zip -r V2.zip V2/*
+      # - dbm-test2/package:
+      #     project_name: "MSSQL1"
+      #     file_path: "V2.zip"
+      #     server_address: "35.239.85.41:7017"
+      #     auth_type: "DBmaestroAccount"
+      #     username: "test@dbmaestro.com"
+      # - dbm-test2/custom-build:
+      #     source_project_name: "MSSQL1"
+      #     source_environment_name: "Dev_Env_1"
+      #     target_project_name: "MSSQL1"
+      #     target_environment_name: "Release Source"
+      #     source_version_type: "live"
+      #     target_version_type: "live"
+      #     server_address: "35.239.85.41:7017"
+      #     auth_type: "DBmaestroAccount"
+      #     username: "test@dbmaestro.com"
+      # - dbm-test2/upgrade:
+      #     project_name: "MSSQL1"
+      #     environment_name: "Release Source"
+      #     package_name: "V1"
+      #     server_address: "35.239.85.41:7017"
+      #     auth_type: "DBmaestroAccount"
+      #     username: "test@dbmaestro.com"
+      # - dbm-test2/build:
+      #     project_name: "MSSQL1"
+      #     environment_name: "Dev_Env_1"
+      #     server_address: "35.239.85.41:7017"
+      #     auth_type: "DBmaestroAccount"
+      #     username: "test@dbmaestro.com"
+      # - dbm-test2/get-env-packages:
+      #     project_name: "CircleTest1"
+      #     environment_name: "Release Source"
+      #     server_address: "35.239.85.41:7017"
+      #     auth_type: "DBmaestroAccount"
+      #     username: "test@dbmaestro.com"
+      # - dbm-test2/validate:
+      #     project_name: "CircleTest1"
+      #     environment_name: "Release Source"
+      #     package_name: "V0"
+      #     server_address: "35.239.85.41:7017"
+      #     auth_type: "DBmaestroAccount"
+      #     username: "test@dbmaestro.com"
+      # - dbm-test2/apply-label:
+      #     project_name: "CircleTest1"
+      #     environment_name: "Release Source"
+      #     label_name: "Test_lbl"
+      #     label_description: "AddedByCircleCI"
+      #     server_address: "35.239.85.41:7017"
+      #     auth_type: "DBmaestroAccount"
+      #     username: "test@dbmaestro.com"
+      # - dbm-test2/backup-environment:
+      #     project_name: "CircleTest1"
+      #     environment_name: "Release Source"
+      #     backup_name: "Test_bkp"
+      #     backup_description: "CreatedByCircleCI"
+      #     server_address: "35.239.85.41:7017"
+      #     auth_type: "DBmaestroAccount"
+      #     username: "test@dbmaestro.com"
+      # - dbm-test2/build:
+      #     project_name: "CircleTest1"
+      #     environment_name: "Release Source"
+      #     server_address: "35.239.85.41:7017"
+      #     auth_type: "DBmaestroAccount"
+      #     username: "test@dbmaestro.com"
+      # - run: wget -O /dev/stdout 35.239.85.41:7000/run/run
 
 workflows:
   # Prior to producing a development orb (which requires credentials) basic validation, linting, and even unit testing can be performed.
