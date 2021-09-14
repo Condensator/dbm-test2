@@ -34,6 +34,15 @@ jobs:
       # Push new changes first, before adding new tests to your config.
       #- run: wget -O /dev/stdout 35.239.85.41:7000/run/run
       - dbm-test2/download-automation-jar
+      - dbm-test2/create-manifest-file:
+          path_to_scripts_folder: "V2"
+      - run: zip -r V2.zip V2/
+      - dbm-test2/package:
+          project_name: "MSSQL1"
+          file_path: "V2.zip"
+          server_address: "35.239.85.41:7017"
+          auth_type: "DBmaestroAccount"
+          username: "test@dbmaestro.com"
       - dbm-test2/custom-build:
           source_project_name: "MSSQL1"
           source_environment_name: "Dev_Env_1"
@@ -51,8 +60,6 @@ jobs:
           server_address: "35.239.85.41:7017"
           auth_type: "DBmaestroAccount"
           username: "test@dbmaestro.com"
-      - dbm-test2/create-manifest-file:
-          path_to_scripts_folder: "V1"
       - dbm-test2/build:
           project_name: "MSSQL1"
           environment_name: "Dev_Env_1"
