@@ -9,7 +9,7 @@ CustomBuild(){
       echo "Using local password variable"
       DBM_PWD=$DBM_PASSWORD
     fi
-    CMDLINE='java -jar "'$DBM_TOOL_PATH'/DBmaestroAgent.jar" -Build -SourceProjectName "'$DBM_SOURCE_PROJECT_NAME'" -SourceEnvName "'$DBM_SOURCE_ENVIRONMENT_NAME'" -TargetProjectName "'$DBM_TARGET_PROJECT_NAME'" -TargetEnvName "'$DBM_TARGET_ENVIRONMENT_NAME'" '
+    CMDLINE='java -jar "'$DBM_TOOL_PATH'/DBmaestroAgent.jar" -CustomBuild -SourceProjectName "'$DBM_SOURCE_PROJECT_NAME'" -SourceEnvName "'$DBM_SOURCE_ENVIRONMENT_NAME'" -TargetProjectName "'$DBM_TARGET_PROJECT_NAME'" -TargetEnvName "'$DBM_TARGET_ENVIRONMENT_NAME'" '
     if [[  -n ${DBM_BASELINE_PROJECT_NAME} &&  -n ${DBM_BASELINE_ENVIRONMENT_NAME} ]]; then
         CMDLINE=$CMDLINE'-BaselineProjectName "'$DBM_BASELINE_PROJECT_NAME' -BaselineEnvName "'$DBM_BASELINE_ENVIRONMENT_NAME'" '
     fi
