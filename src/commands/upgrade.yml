@@ -55,6 +55,7 @@ steps:
         DBM_TOOL_PATH: << parameters.tool_path >>
         DBM_PROJECT_NAME: << parameters.project_name >>
         DBM_ENVIRONMENT_NAME: << parameters.environment_name >>
+        DBM_PACKAGE_NAME: << parameters.package_name >>
         DBM_TAG_NAME: << parameters.tag_name >>
         DBM_BACKUP_BEHAVIOR: << parameters.backup_behavior >>
         DBM_RESTORE_BEHAVIOR: << parameters.restore_behavior >>
