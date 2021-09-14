@@ -36,13 +36,19 @@ jobs:
       - dbm-test2/download-automation-jar
       - dbm-test2/create-manifest-file:
           path_to_scripts_folder: "V2"
-      - dbm-test2/rollback:
+      - dbm-test2/pre-check:
           project_name: "MSSQL1"
-          environment_name: "Release Source"
-          package_name: "V0"
+          package_name: "V1"
           server_address: "35.239.85.41:7017"
           auth_type: "DBmaestroAccount"
           username: "test@dbmaestro.com"
+      # - dbm-test2/rollback:
+      #     project_name: "MSSQL1"
+      #     environment_name: "Release Source"
+      #     package_name: "V0"
+      #     server_address: "35.239.85.41:7017"
+      #     auth_type: "DBmaestroAccount"
+      #     username: "test@dbmaestro.com"
       # - run: zip -r V2.zip V2/*
       # - dbm-test2/package:
       #     project_name: "MSSQL1"
@@ -99,12 +105,6 @@ jobs:
       #     environment_name: "Release Source"
       #     backup_name: "Test_bkp"
       #     backup_description: "CreatedByCircleCI"
-      #     server_address: "35.239.85.41:7017"
-      #     auth_type: "DBmaestroAccount"
-      #     username: "test@dbmaestro.com"
-      # - dbm-test2/build:
-      #     project_name: "CircleTest1"
-      #     environment_name: "Release Source"
       #     server_address: "35.239.85.41:7017"
       #     auth_type: "DBmaestroAccount"
       #     username: "test@dbmaestro.com"
