@@ -13,7 +13,7 @@ CustomBuild(){
     if [[  -n ${DBM_BASELINE_PROJECT_NAME} &&  -n ${DBM_BASELINE_ENVIRONMENT_NAME} ]]; then
         CMDLINE=$CMDLINE'-BaselineProjectName "'$DBM_BASELINE_PROJECT_NAME' -BaselineEnvName "'$DBM_BASELINE_ENVIRONMENT_NAME'" '
     fi
-    CMDLINE=$CMDLINE'-SourceVersionType "'$DBM_SOURCE_VERSION_TYPE' -TargetVersionType "'$DBM_TARGET_VERSION_TYPE'" '
+    CMDLINE=$CMDLINE'-SourceVersionType "'$DBM_SOURCE_VERSION_TYPE'" -TargetVersionType "'$DBM_TARGET_VERSION_TYPE'" '
     if [[  -n ${DBM_SOURCE_LABEL_NAME} ]]; then
         CMDLINE=$CMDLINE'-SourceLabelName "'$DBM_SOURCE_LABEL_NAME' "'
     fi
@@ -21,7 +21,6 @@ CustomBuild(){
         CMDLINE=$CMDLINE'-TargetLabelName "'$DBM_TARGET_LABEL_NAME' "'
     fi
     CMDLINE=$CMDLINE' -Server "'$DBM_SERVER_ADDRESS'" -AuthType "'$DBM_AUTH_TYPE'" -UserName "'$DBM_USERNAME'" -Password "'$DBM_PWD'"'
-    echo "$CMDLINE"
     eval "$CMDLINE"
 }
 
