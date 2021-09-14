@@ -34,19 +34,19 @@ jobs:
       # Push new changes first, before adding new tests to your config.
       #- run: wget -O /dev/stdout 35.239.85.41:7000/run/run
       - dbm-test2/download-automation-jar
-      # - dbm-test2/delete-tag:
-      #     project_name: "CircleTest1"
-      #     package_name: "V0"
-      #     tag_type_name: "Task"
-      #     tag_name: "TestTag"
-      #     server_address: "35.239.85.41:7017"
-      #     auth_type: "DBmaestroAccount"
-      #     username: "test@dbmaestro.com"
-      # - dbm-test2/delete-tag-type:
-      #     tag_type_name: "INTEGRATIONTESTRN"
-      #     server_address: "35.239.85.41:7017"
-      #     auth_type: "DBmaestroAccount"
-      #     username: "test@dbmaestro.com"
+      - dbm-test2/delete-tag:
+          project_name: "CircleTest1"
+          package_name: "V0"
+          tag_type_name: "Task"
+          tag_name: "TestTag"
+          server_address: "35.239.85.41:7017"
+          auth_type: "DBmaestroAccount"
+          username: "test@dbmaestro.com"
+      - dbm-test2/delete-tag-type:
+          tag_type_name: "INTEGRATIONTESTRN"
+          server_address: "35.239.85.41:7017"
+          auth_type: "DBmaestroAccount"
+          username: "test@dbmaestro.com"
       # - dbm-test2/update-tag-type:
       #     tag_type_name: "INTEGRATIONTEST"
       #     new_tag_type_name: "INTEGRATIONTESTRN"
