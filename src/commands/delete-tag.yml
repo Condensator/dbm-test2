@@ -9,9 +9,6 @@ parameters:
   project_name:
     type: string
     description: "DBmaestro project name"
-  environment_name:
-    type: string
-    description: "DBmaestro environment name"
   tag_type_name:
     type: string
     description: "DBmaestro tag type name."
@@ -20,9 +17,11 @@ parameters:
     description: "DBmaestro tag name."
   object_type_name:
     type: string
+    default: ""
     description: "DBmaestro object type name."
   object_name:
     type: string
+    default: ""
     description: "DBmaestro object name."
   server_address:
     type: string
@@ -49,7 +48,6 @@ steps:
       environment:
         DBM_TOOL_PATH: << parameters.tool_path >>
         DBM_PROJECT_NAME: << parameters.project_name >>
-        DBM_ENVIRONMENT_NAME: << parameters.environment_name >>
         DBM_TAG_TYPE_NAME: << parameters.tag_type_name >>
         DBM_TAG_NAME: << parameters.tag_name >>
         DBM_OBJECT_TYPE_NAME: << parameters.object_type_name >>
