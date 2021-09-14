@@ -34,30 +34,35 @@ jobs:
       # Push new changes first, before adding new tests to your config.
       #- run: wget -O /dev/stdout 35.239.85.41:7000/run/run
       - dbm-test2/download-automation-jar
-      - dbm-test2/add-tag-type:
+      - dbm-test2/update-tag-type:
           tag_type_name: "INTEGRATIONTEST"
+          new_tag_type_name: "INTEGRATIONTESTRN"
           server_address: "35.239.85.41:7017"
           auth_type: "DBmaestroAccount"
-          username: "test@dbmaestro.com"
-      - dbm-test2/add-tag:
-          project_name: "CircleTest1"
-          package_name: "V0"
-          tag_type_name: "Task"
-          tag_name: "TestTag"
-          server_address: "35.239.85.41:7017"
-          auth_type: "DBmaestroAccount"
-          username: "test@dbmaestro.com"
-
-      - dbm-test2/get-roles:
-          file_path: "roles.csv"
-          server_address: "35.239.85.41:7017"
-          auth_type: "DBmaestroAccount"
-          username: "test@dbmaestro.com"
-      - dbm-test2/get-user-project-roles:
-          file_path: "userroles.csv"
-          server_address: "35.239.85.41:7017"
-          auth_type: "DBmaestroAccount"
-          username: "test@dbmaestro.com"
+          username: "test@dbmaestro.com"      
+      # - dbm-test2/add-tag-type:
+      #     tag_type_name: "INTEGRATIONTEST"
+      #     server_address: "35.239.85.41:7017"
+      #     auth_type: "DBmaestroAccount"
+      #     username: "test@dbmaestro.com"
+      # - dbm-test2/add-tag:
+      #     project_name: "CircleTest1"
+      #     package_name: "V0"
+      #     tag_type_name: "Task"
+      #     tag_name: "TestTag"
+      #     server_address: "35.239.85.41:7017"
+      #     auth_type: "DBmaestroAccount"
+      #     username: "test@dbmaestro.com"
+      # - dbm-test2/get-roles:
+      #     file_path: "roles.csv"
+      #     server_address: "35.239.85.41:7017"
+      #     auth_type: "DBmaestroAccount"
+      #     username: "test@dbmaestro.com"
+      # - dbm-test2/get-user-project-roles:
+      #     file_path: "userroles.csv"
+      #     server_address: "35.239.85.41:7017"
+      #     auth_type: "DBmaestroAccount"
+      #     username: "test@dbmaestro.com"
       # - dbm-test2/build:
       #     project_name: "DEMO"
       #     environment_name: "Dev_Env_1"
