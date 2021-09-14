@@ -46,7 +46,7 @@ steps:
         DBM_AUTH_TYPE: << parameters.auth_type >>
         DBM_USERNAME: << parameters.username >>
         DBM_PASSWORD: << parameters.password >>
-      name: Add tag
+      name: Update tag type
       command: |
         if [ -z "$DBM_PASSWORD" ]
         then
