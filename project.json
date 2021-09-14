@@ -82,7 +82,7 @@
               "Name": "mysql_rs",
               "SchemaCredentials": {
                 "security": "1",
-                "password": "123456",
+                "password": "1q2w3e4R",
                 "port": "3306",
                 "dbName": "poc_rs",
                 "host": "localhost",
