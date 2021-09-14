@@ -31,7 +31,7 @@ parameters:
   source_version_type:
     type: enum
     description: "Specifies the source version type to be used in build process"
-    enum: ["latest", "label", "latestlabel"]
+    enum: ["latest", "label", "latestlabel", "live"]
   source_label_name:
     type: string
     default: ""
@@ -39,7 +39,7 @@ parameters:
   target_version_type:
     type: enum
     description: "Specifies the target version type to be used in build process"
-    enum: ["latest", "label", "latestlabel"]
+    enum: ["latest", "label", "latestlabel", "live"]
   target_label_name:
     type: string
     default: ""

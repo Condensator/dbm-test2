@@ -34,20 +34,20 @@ jobs:
       # Push new changes first, before adding new tests to your config.
       #- run: wget -O /dev/stdout 35.239.85.41:7000/run/run
       - dbm-test2/download-automation-jar
-      - dbm-test2/upgrade:
-          project_name: "MSSQL1"
-          environment_name: "Release Source"
-          package_name: "V1"
-          server_address: "35.239.85.41:7017"
-          auth_type: "DBmaestroAccount"
-          username: "test@dbmaestro.com"
       - dbm-test2/custom-build:
           source_project_name: "MSSQL1"
           source_environment_name: "Dev_Env_1"
           target_project_name: "MSSQL1"
           target_environment_name: "Release Source"
-          source_version_type: "latest"
-          target_version_type: "latest"
+          source_version_type: "live"
+          target_version_type: "live"
+          server_address: "35.239.85.41:7017"
+          auth_type: "DBmaestroAccount"
+          username: "test@dbmaestro.com"
+      - dbm-test2/upgrade:
+          project_name: "MSSQL1"
+          environment_name: "Release Source"
+          package_name: "V1"
           server_address: "35.239.85.41:7017"
           auth_type: "DBmaestroAccount"
           username: "test@dbmaestro.com"
