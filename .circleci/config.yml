@@ -38,7 +38,7 @@ jobs:
           path_to_scripts_folder: "V2"
       - dbm-test2/rollback:
           project_name: "MSSQL1"
-          environment_name: "Dev_Env_1"
+          environment_name: "Release Source"
           package_name: "V0"
           server_address: "35.239.85.41:7017"
           auth_type: "DBmaestroAccount"
