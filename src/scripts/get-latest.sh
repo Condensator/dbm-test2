@@ -9,7 +9,7 @@ GetLatest(){
       echo "Using local password variable"
       DBM_PWD=$DBM_PASSWORD
     fi
-    CMDLINE='java -jar "'$DBM_TOOL_PATH'/DBmaestroAgent.jar" -GetLatest -ProjectName "'$DBM_PROJECT_NAME'" -EnvName "'$DBM_ENVIRONMENT_NAME'"'
+    CMDLINE='java -jar "'$DBM_TOOL_PATH'/DBmaestroAgent.jar" -GetLatest -ProjectName "'$DBM_PROJECT_NAME'" -EnvName "'$DBM_ENVIRONMENT_NAME'" '
     if [[  -n ${DBM_PACKAGE_NAME} ]]; then
         CMDLINE=$CMDLINE'-PackageName "'$DBM_PACKAGE_NAME' "'
     fi
@@ -23,6 +23,7 @@ GetLatest(){
         CMDLINE=$CMDLINE'-CreateScriptsOnly "'$DBM_CREATE_DCRIPTS_ONLY' "'
     fi
     CMDLINE=$CMDLINE' -Server "'$DBM_SERVER_ADDRESS'" -AuthType "'$DBM_AUTH_TYPE'" -UserName "'$DBM_USERNAME'" -Password "'$DBM_PWD'"'
+    echo "$CMDLINE"
     eval "$CMDLINE"
 }
 
