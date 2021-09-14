@@ -18,7 +18,7 @@ parameters:
   ignore_script_warnings:
     type: enum
     description: "Ignore/don't ignore warnings in scripts"
-    default: "False"
+    default: "True"
     enum: ["True", "False"]
   server_address:
     type: string

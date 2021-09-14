@@ -11,10 +11,10 @@ Package(){
     fi
     CMDLINE='java -jar "'$DBM_TOOL_PATH'/DBmaestroAgent.jar" -Package -ProjectName "'$DBM_PROJECT_NAME'" '
     if [[  -n ${DBM_IGNORE_SCRIPT_WARNINGS} ]]; then
-        CMDLINE=$CMDLINE'-IgnoreScriptWarnings "'$DBM_IGNORE_SCRIPT_WARNINGS' "'
+        CMDLINE=$CMDLINE'-IgnoreScriptWarnings "'$DBM_IGNORE_SCRIPT_WARNINGS'" '
     fi
     if [[  -n ${DBM_FILE_PATH} ]]; then
-        CMDLINE=$CMDLINE'-FilePath "'$DBM_FILE_PATH' "'
+        CMDLINE=$CMDLINE'-FilePath "'$DBM_FILE_PATH'" '
     fi
     CMDLINE=$CMDLINE' -Server "'$DBM_SERVER_ADDRESS'" -AuthType "'$DBM_AUTH_TYPE'" -UserName "'$DBM_USERNAME'" -Password "'$DBM_PWD'"'
     echo "$CMDLINE"
