@@ -36,7 +36,7 @@ jobs:
       - dbm-test2/download-automation-jar
       - dbm-test2/create-manifest-file:
           path_to_scripts_folder: "V2"
-      - run: zip -r V2.zip V2/
+      - run: zip -r V2.zip V2/*
       - dbm-test2/package:
           project_name: "MSSQL1"
           file_path: "V2.zip"
