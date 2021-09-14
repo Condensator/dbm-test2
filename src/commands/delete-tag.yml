@@ -6,6 +6,9 @@ parameters:
     type: string
     default: "tools/dbmaestro"
     description: "Path where the DBmaestroAgent.jar is located"
+  package_name:
+    type: string
+    description: "DBmaestro package name"
   project_name:
     type: string
     description: "DBmaestro project name"
@@ -48,6 +51,7 @@ steps:
       environment:
         DBM_TOOL_PATH: << parameters.tool_path >>
         DBM_PROJECT_NAME: << parameters.project_name >>
+        DBM_PACKAGE_NAME: << parameters.package_name >>
         DBM_TAG_TYPE_NAME: << parameters.tag_type_name >>
         DBM_TAG_NAME: << parameters.tag_name >>
         DBM_OBJECT_TYPE_NAME: << parameters.object_type_name >>
