@@ -248,12 +248,12 @@ jobs:
     #       server_address: "35.239.85.41:7017"
     #       auth_type: "DBmaestroAccount"
     #       username: "test@dbmaestro.com"
-      - dbm-test2/get-latest:
-          project_name: "MSSQL1"
-          environment_name: "Dev_Env_1"
-          server_address: "35.239.85.41:7017"
-          auth_type: "DBmaestroAccount"
-          username: "test@dbmaestro.com"
+    #   - dbm-test2/get-latest:
+    #       project_name: "MSSQL1"
+    #       environment_name: "Dev_Env_1"
+    #       server_address: "35.239.85.41:7017"
+    #       auth_type: "DBmaestroAccount"
+    #       username: "test@dbmaestro.com"
       - dbm-test2/pre-check-env:
           project_name: "MSSQL1"
           package_name: "V1"
