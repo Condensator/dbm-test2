@@ -36,10 +36,17 @@ jobs:
       - dbm-test2/download-automation-jar
       - dbm-test2/view-labels:
           project_name: "CircleTest1"
-          environment_name: "Release Source"
+          target_project_name: "CircleTest1"
+          schema_map: "mysql_rs=poc_rs;"
           server_address: "35.239.85.41:7017"
           auth_type: "DBmaestroAccount"
-          username: "test@dbmaestro.com"
+          username: "test@dbmaestro.com"      
+      # - dbm-test2/view-labels:
+      #     project_name: "CircleTest1"
+      #     environment_name: "Release Source"
+      #     server_address: "35.239.85.41:7017"
+      #     auth_type: "DBmaestroAccount"
+      #     username: "test@dbmaestro.com"
       # - dbm-test2/delete-tag:
       #     project_name: "CircleTest1"
       #     package_name: "V0"
