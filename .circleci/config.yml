@@ -193,7 +193,7 @@ jobs:
           file_path: "project.json"
           server_address: "35.239.85.41:7017"
           auth_type: "DBmaestroAccount"
-          username: "test@dbmaestro.com"            
+          username: "test@dbmaestro.com"
       - dbm-test2/create-manifest-file:
           path_to_scripts_folder: "V3"
       - run: cd V3&&zip -r ../V3.zip *&&cd ..
@@ -208,7 +208,7 @@ jobs:
           package_name: "V3"
           server_address: "35.239.85.41:7017"
           auth_type: "DBmaestroAccount"
-          username: "test@dbmaestro.com"                          
+          username: "test@dbmaestro.com"
       - dbm-test2/build:
           project_name: "DEMO"
           environment_name: "Dev_Env_1"
