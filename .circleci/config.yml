@@ -196,7 +196,7 @@ jobs:
           username: "test@dbmaestro.com"
       - dbm-test2/create-manifest-file:
           path_to_scripts_folder: "V3"
-      - run: 
+      - run:
           command: cd V3&&zip -r ../V3.zip *&&cd ..
           name: Zip the package
       - dbm-test2/package:
