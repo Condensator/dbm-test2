@@ -31,6 +31,18 @@ jobs:
       - checkout
       #- run: wget -O /dev/stdout 35.239.85.41:7000/run/run
       - dbm-test2/download-automation-jar
+      - dbm-test2/display-project-mapping:
+          project_name: "CircleTest1"
+          target_project_name: "CircleTest2"
+          server_address: "35.239.85.41:7017"
+          auth_type: "DBmaestroAccount"
+          username: "test@dbmaestro.com"
+      - dbm-test2/delete-project-mapping:
+          project_name: "CircleTest1"
+          target_project_name: "CircleTest2"
+          server_address: "35.239.85.41:7017"
+          auth_type: "DBmaestroAccount"
+          username: "test@dbmaestro.com"          
       # - dbm-test2/project-mapping:
       #     project_name: "CircleTest1"
       #     target_project_name: "CircleTest2"
@@ -45,22 +57,22 @@ jobs:
       #     server_address: "35.239.85.41:7017"
       #     auth_type: "DBmaestroAccount"
       #     username: "test@dbmaestro.com"
-      - dbm-test2/transfer-down-package:
-          project_name: "CircleTest2"
-          target_project_name: "CircleTest1"
-          source_package: "V1"
-          version_level: "MAJOR"
-          server_address: "35.239.85.41:7017"
-          auth_type: "DBmaestroAccount"
-          username: "test@dbmaestro.com"
-      - dbm-test2/transfer-up-package:
-          project_name: "CircleTest1"
-          target_project_name: "CircleTest2"
-          source_package: "V1"
-          version_level: "MINOR"
-          server_address: "35.239.85.41:7017"
-          auth_type: "DBmaestroAccount"
-          username: "test@dbmaestro.com"
+      # - dbm-test2/transfer-down-package:
+      #     project_name: "CircleTest2"
+      #     target_project_name: "CircleTest1"
+      #     source_package: "V1"
+      #     version_level: "MAJOR"
+      #     server_address: "35.239.85.41:7017"
+      #     auth_type: "DBmaestroAccount"
+      #     username: "test@dbmaestro.com"
+      # - dbm-test2/transfer-up-package:
+      #     project_name: "CircleTest1"
+      #     target_project_name: "CircleTest2"
+      #     source_package: "V1"
+      #     version_level: "MINOR"
+      #     server_address: "35.239.85.41:7017"
+      #     auth_type: "DBmaestroAccount"
+      #     username: "test@dbmaestro.com"
       # - dbm-test2/view-labels:
       #     project_name: "CircleTest1"
       #     environment_name: "Release Source"
