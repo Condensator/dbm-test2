@@ -9,12 +9,12 @@ TransferPackage(){
       echo "Using local password variable"
       DBM_PWD=$DBM_PASSWORD
     fi
-    CMDLINE='java -jar "'$DBM_TOOL_PATH'/DBmaestroAgent.jar" -TransferPackage -ProjectName "'$DBM_PROJECT_NAME'" -TargetProjectName "'$DBM_TARGET_PROJECT_NAME'" -SourcePackage "'$DBM_SOURCE_PACKAGE'"'
+    CMDLINE='java -jar "'$DBM_TOOL_PATH'/DBmaestroAgent.jar" -TransferPackage -ProjectName "'$DBM_PROJECT_NAME'" -TargetProjectName "'$DBM_TARGET_PROJECT_NAME'" -SourcePackage "'$DBM_SOURCE_PACKAGE'" '
     if [[  -n ${DBM_TARGET_PACKAGE} ]]; then
-        CMDLINE=$CMDLINE' -TargetPackage "'$DBM_TARGET_PACKAGE' "'
+        CMDLINE=$CMDLINE' -TargetPackage "'$DBM_TARGET_PACKAGE'" '
     fi
     if [[  -n ${DBM_VERSION_LEVEL} ]]; then
-        CMDLINE=$CMDLINE'-VersionLevel "'$DBM_VERSION_LEVEL' "'
+        CMDLINE=$CMDLINE'-VersionLevel "'$DBM_VERSION_LEVEL'" '
     fi
     CMDLINE=$CMDLINE' -Server "'$DBM_SERVER_ADDRESS'" -AuthType "'$DBM_AUTH_TYPE'" -UserName "'$DBM_USERNAME'" -Password "'$DBM_PWD'"'
     eval "$CMDLINE"
