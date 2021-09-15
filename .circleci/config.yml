@@ -196,7 +196,9 @@ jobs:
           username: "test@dbmaestro.com"
       - dbm-test2/create-manifest-file:
           path_to_scripts_folder: "V3"
-      - run: cd V3&&zip -r ../V3.zip *&&cd ..
+      - run: 
+          command: cd V3&&zip -r ../V3.zip *&&cd ..
+          name: Zip the package
       - dbm-test2/package:
           project_name: "DEMO"
           file_path: "V3.zip"
@@ -246,12 +248,12 @@ jobs:
           server_address: "35.239.85.41:7017"
           auth_type: "DBmaestroAccount"
           username: "test@dbmaestro.com"
-      - dbm-test2/get-latest:
-          project_name: "MSSQL1"
-          environment_name: "Dev_Env_1"
-          server_address: "35.239.85.41:7017"
-          auth_type: "DBmaestroAccount"
-          username: "test@dbmaestro.com"
+    #   - dbm-test2/get-latest:
+    #       project_name: "MSSQL1"
+    #       environment_name: "Dev_Env_1"
+    #       server_address: "35.239.85.41:7017"
+    #       auth_type: "DBmaestroAccount"
+    #       username: "test@dbmaestro.com"
       - dbm-test2/pre-check-env:
           project_name: "MSSQL1"
           package_name: "V1"

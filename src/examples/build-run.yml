@@ -1,0 +1,39 @@
+description: >
+  Create package using build
+  Then upgrade to this package
+usage:
+  version: 2.1
+  orbs:
+    dbm-test2: dbm/dbm-test2@0.0.7
+
+jobs:
+  dbm-deploy: 
+          docker:
+            - image: cimg/openjdk:16.0.2
+          steps:
+            - checkout
+            - dbm-test2/download-automation-jar          
+            - dbm-test2/create-manifest-file:
+                path_to_scripts_folder: "V3"
+            - run: 
+              command: cd V3&&zip -r ../V3.zip *&&cd ..
+              name: Zip the package
+            - dbm-test2/build:
+                project_name: "DEMO"
+                environment_name: "Dev_Env_1"
+                package_name: "V4"
+                server_address: "dbm.automation.host:8017"
+                auth_type: "DBmaestroAccount"
+                username: "test@dbmaestro.com"
+            - dbm-test2/upgrade:
+                project_name: "DEMO"
+                environment_name: "Release Source"
+                package_name: "V4"
+                server_address: "dbm.automation.host:8017"
+                auth_type: "DBmaestroAccount"
+                username: "test@dbmaestro.com"                                                    
+
+workflows:
+  test-run:
+    jobs:
+      - dbm-deploy
