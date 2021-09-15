@@ -31,6 +31,12 @@ jobs:
       - checkout
       #- run: wget -O /dev/stdout 35.239.85.41:7000/run/run
       - dbm-test2/download-automation-jar
+      - dbm-test2/project-mapping:
+          project_name: "CircleTest1"
+          target_project_name: "CircleTest2"
+          server_address: "35.239.85.41:7017"
+          auth_type: "DBmaestroAccount"
+          username: "test@dbmaestro.com"
       - dbm-test2/transfer-package:
           project_name: "CircleTest1"
           target_project_name: "CircleTest2"
@@ -55,12 +61,6 @@ jobs:
           server_address: "35.239.85.41:7017"
           auth_type: "DBmaestroAccount"
           username: "test@dbmaestro.com"
-      # - dbm-test2/project-mapping:
-      #     project_name: "CircleTest1"
-      #     target_project_name: "CircleTest2"
-      #     server_address: "35.239.85.41:7017"
-      #     auth_type: "DBmaestroAccount"
-      #     username: "test@dbmaestro.com"
       # - dbm-test2/view-labels:
       #     project_name: "CircleTest1"
       #     environment_name: "Release Source"

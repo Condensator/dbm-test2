@@ -53,7 +53,7 @@ steps:
       environment:
         DBM_TOOL_PATH: << parameters.tool_path >>
         DBM_PROJECT_NAME: << parameters.project_name >>
-        DBM_TARGET_PROJECT_NAME: << parameters.project_name >>
+        DBM_TARGET_PROJECT_NAME: << parameters.target_project_name >>
         DBM_SCHEMA_MAP: << parameters.schema_map >>
         DBM_TRANSFER_OPENED_PACKAGE: << parameters.transfer_opened_package >>
         DBM_KEEP_STATE: << parameters.keep_state >>
