@@ -60,6 +60,7 @@ steps:
         DBM_LABEL_NAME: << parameters.baseline_label_name >>
         DBM_BASELINE_LABEL_NAME: << parameters.baseline_label_name >>
         DBM_CREATE_DCRIPTS_ONLY: << parameters.create_scripts_only >>
+        DBM_SERVER_ADDRESS: << parameters.server_address >>
         DBM_USE_SSL: << parameters.use_ssl >>
         DBM_AUTH_TYPE: << parameters.auth_type >>
         DBM_USERNAME: << parameters.username >>
