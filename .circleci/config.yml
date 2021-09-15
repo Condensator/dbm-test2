@@ -160,7 +160,7 @@ jobs:
       - dbm-test2/apply-label:
           project_name: "CircleTest1"
           environment_name: "Release Source"
-          label_name: "Test_lbl"
+          label_name: "Test_label"
           label_description: "AddedByCircleCI"
           server_address: "35.239.85.41:7017"
           auth_type: "DBmaestroAccount"
