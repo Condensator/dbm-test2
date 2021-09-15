@@ -7,7 +7,7 @@ usage:
     dbm-test2: dbm/dbm-test2@0.0.7
 
 jobs:
-  dbm-deploy: 
+  dbm-deploy:
           docker:
             - image: cimg/openjdk:16.0.2
           steps:
@@ -15,7 +15,7 @@ jobs:
             - dbm-test2/download-automation-jar
             - dbm-test2/create-manifest-file:
                 path_to_scripts_folder: "V3"
-            - run: 
+            - run:
               command: cd V3&&zip -r ../V3.zip *&&cd ..
               name: Zip the package
             - dbm-test2/build:
