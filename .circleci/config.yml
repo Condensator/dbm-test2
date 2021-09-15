@@ -33,7 +33,7 @@ jobs:
       - dbm-test2/download-automation-jar
       - dbm-test2/project-mapping:
           project_name: "CircleTest1"
-          target_project_name: "CircleTest1"
+          target_project_name: "CircleTest2"
           schema_map: "mysql_rs=poc_rs"
           server_address: "35.239.85.41:7017"
           auth_type: "DBmaestroAccount"
