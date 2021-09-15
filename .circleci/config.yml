@@ -145,7 +145,7 @@ jobs:
       - dbm-test2/backup-environment:
           project_name: "CircleTest1"
           environment_name: "Release Source"
-          backup_name: "Test_bkp"
+          backup_name: "Test_backup"
           backup_description: "CreatedByCircleCI"
           server_address: "35.239.85.41:7017"
           auth_type: "DBmaestroAccount"
@@ -153,7 +153,7 @@ jobs:
       - dbm-test2/restore-environment:
           project_name: "CircleTest1"
           environment_name: "Release Source"
-          backup_name: "Test_bkp"
+          backup_name: "Test_backup"
           server_address: "35.239.85.41:7017"
           auth_type: "DBmaestroAccount"
           username: "test@dbmaestro.com"
