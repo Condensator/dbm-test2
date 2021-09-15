@@ -209,13 +209,6 @@ jobs:
           server_address: "35.239.85.41:7017"
           auth_type: "DBmaestroAccount"
           username: "test@dbmaestro.com"
-      - dbm-test2/build:
-          project_name: "DEMO"
-          environment_name: "Dev_Env_1"
-          package_name: "V4"
-          server_address: "35.239.85.41:7017"
-          auth_type: "DBmaestroAccount"
-          username: "test@dbmaestro.com"
       - dbm-test2/rollback:
           project_name: "DEMO"
           environment_name: "Release Source"
@@ -229,6 +222,13 @@ jobs:
           auth_type: "DBmaestroAccount"
           username: "test@dbmaestro.com"
       #Import section end
+      - dbm-test2/build:
+          project_name: "MSSQL1"
+          environment_name: "Dev_Env_1"
+          package_name: "V4"
+          server_address: "35.239.85.41:7017"
+          auth_type: "DBmaestroAccount"
+          username: "test@dbmaestro.com"
       - dbm-test2/custom-build:
           source_project_name: "MSSQL1"
           source_environment_name: "Dev_Env_1"
