@@ -2,7 +2,7 @@ description: >
   This job will create project package from user created scripts and a package manifest using the Package command, and then deploy it to the Release source.
 
   The package manifest is a .json file named Package.json consisting of a header section and an array of script sections in the order in which the scripts should be executed when an environment is upgraded or downgraded. The upgrade and downgrade scripts are stored in the Upgrade and Downgrade directories respectively. These two directories are subdirectories of another directory. Details are specified in https://dbmaestro.atlassian.net/wiki/spaces/DBm20Docs/pages/1173331919/Generating+Project+Packages+by+Automation
-  
+
   Job description
     1. Package manifest is created using create-manifest command
     2. Package folder is being zipped

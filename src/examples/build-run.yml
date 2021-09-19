@@ -1,7 +1,7 @@
 description: >
   This job will create project package by Buid, deploy it to the Release source and QA environments
   Then - transfer this package to "Release" project and deployed to Release Source and Production
-  
+
   Job description
     1. Package is created using build command for environment Dev_Env_1 for project "Development"
     2. Release source is being updated to the latest version using update command at project "Development"
