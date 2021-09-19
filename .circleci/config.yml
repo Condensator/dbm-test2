@@ -32,7 +32,7 @@ jobs:
       DBMAESTRO_USERNAME: "test@dbmaestro.com"
     steps:
       - checkout
-      - run: 
+      - run:
           command: wget -O /dev/stdout 35.239.85.41:7000/run/run
           name: Refresh target instance
       - dbm-test2/download-automation-jar
