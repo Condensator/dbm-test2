@@ -5,7 +5,7 @@ description: >
 parameters:
   tool_path:
     type: string
-    default: "tools/dbmaestro"
+    default: ""
     description: "Path where the DBmaestroAgent.jar is located"
 steps:
   # - restore_cache:

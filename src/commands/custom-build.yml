@@ -6,7 +6,7 @@ description: >
 parameters:
   tool_path:
     type: string
-    default: "tools/dbmaestro"
+    default: ""
     description: "Path where the DBmaestroAgent.jar is located"
   source_project_name:
     type: string
@@ -46,19 +46,21 @@ parameters:
     description: "Label name to be used as target in build process"
   server_address:
     type: string
+    default: ""
     description: "DBmaestro server address"
   use_ssl:
     type: enum
     description: "Use or don't use SSL/https protocol to connect to the DBmaestro agent. Default is n."
-    default: "n"
-    enum: ["y", "n"]
+    default: ""
+    enum: ["y", "n", ""]
   auth_type:
     type: enum
-    default: "DBmaestroAccount"
+    default: ""
     description: "DBmaestro auth type"
-    enum: ["DBmaestroAccount", "DomainLogin"]
+    enum: ["DBmaestroAccount", "DomainLogin", ""]
   username:
     type: string
+    default: ""
     description: "DBmaestro username"
 steps:
   - run:
