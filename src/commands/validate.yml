@@ -1,6 +1,7 @@
 description: >
-  Ensure environment has DBmaestroAgent.jar
-  If not - download it
+  Validate an Environment with Database Release Automation
+
+  Checks for environment drift from specified version
 
 parameters:
   tool_path:

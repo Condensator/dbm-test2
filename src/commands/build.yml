@@ -1,5 +1,7 @@
 description: >
-  Queue a Backup Environment Job
+  Queue a Build Environment job to the DBmaestro DevOps Platform
+
+  Available in SQL Server projects only
 
 parameters:
   tool_path:
