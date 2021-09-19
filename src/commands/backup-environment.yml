@@ -4,7 +4,7 @@ description: >
 parameters:
   tool_path:
     type: string
-    default: "tools/dbmaestro"
+    default: ""
     description: "Path where the DBmaestroAgent.jar is located"
   project_name:
     type: string
@@ -26,24 +26,22 @@ parameters:
     enum: ["True", "False"]
   server_address:
     type: string
+    default: ""
     description: "DBmaestro server address"
   use_ssl:
     type: enum
     description: "Use or don't use SSL/https protocol to connect to the DBmaestro agent. Default is n."
-    default: "n"
-    enum: ["y", "n"]
+    default: ""
+    enum: ["y", "n", ""]
   auth_type:
     type: enum
-    default: "DBmaestroAccount"
+    default: ""
     description: "DBmaestro auth type"
-    enum: ["DBmaestroAccount", "DomainLogin"]
+    enum: ["DBmaestroAccount", "DomainLogin", ""]
   username:
     type: string
-    description: "DBmaestro username"
-  password:
-    type: string
     default: ""
-    description: "DBmaestro password"
+    description: "DBmaestro username"
 steps:
   - run:
       environment:
@@ -57,6 +55,5 @@ steps:
         DBM_USE_SSL: << parameters.use_ssl >>
         DBM_AUTH_TYPE: << parameters.auth_type >>
         DBM_USERNAME: << parameters.username >>
-        DBM_PASSWORD: << parameters.password >>
       name: Backup environment
       command: <<include(scripts/backup-environment.sh)>>
