@@ -1,13 +1,10 @@
 #!/bin/bash
 
 Build(){
-    if [ -z "$DBM_PASSWORD" ]
+    if [ -z "$DBMAESTRO_PASSWORD" ]
     then
-      echo "Using global password variable"
-      DBM_PWD=$DBMAESTRO_PASSWORD
-    else
-      echo "Using local password variable"
-      DBM_PWD=$DBM_PASSWORD
+      echo "DBMAESTRO_PASSWORD variable is not set"
+      exit 1
     fi
     CMDLINE='java -jar "'$DBM_TOOL_PATH'/DBmaestroAgent.jar" -Build -ProjectName "'$DBM_PROJECT_NAME'" -EnvName "'$DBM_ENVIRONMENT_NAME'" '
     if [[  -n ${DBM_VERSION_TYPE} ]]; then
@@ -25,7 +22,7 @@ Build(){
     if [[  -n ${DBM_VERSION_LEVEL} ]]; then
         CMDLINE=$CMDLINE'-CreatePackage -VersionLevel "'$DBM_VERSION_LEVEL' -AfterCurrentDeployedVersion "'$DBM_AFTER_CURRENT_DEPLOYED_VERSION' "'
     fi
-    CMDLINE=$CMDLINE' -Server "'$DBM_SERVER_ADDRESS'" -AuthType "'$DBM_AUTH_TYPE'" -UserName "'$DBM_USERNAME'" -Password "'$DBM_PWD'"'
+    CMDLINE=$CMDLINE' -Server "'$DBM_SERVER_ADDRESS'" -AuthType "'$DBM_AUTH_TYPE'" -UserName "'$DBM_USERNAME'" -Password "'$DBMAESTRO_PASSWORD'"'
     echo "$CMDLINE"
     eval "$CMDLINE"
 }

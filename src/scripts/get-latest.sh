@@ -1,13 +1,10 @@
 #!/bin/bash
 
 GetLatest(){
-    if [ -z "$DBM_PASSWORD" ]
+    if [ -z "$DBMAESTRO_PASSWORD" ]
     then
-      echo "Using global password variable"
-      DBM_PWD=$DBMAESTRO_PASSWORD
-    else
-      echo "Using local password variable"
-      DBM_PWD=$DBM_PASSWORD
+      echo "DBMAESTRO_PASSWORD variable is not set"
+      exit 1
     fi
     CMDLINE='java -jar "'$DBM_TOOL_PATH'/DBmaestroAgent.jar" -GetLatest -ProjectName "'$DBM_PROJECT_NAME'" -EnvName "'$DBM_ENVIRONMENT_NAME'" '
     if [[  -n ${DBM_PACKAGE_NAME} ]]; then
@@ -22,7 +19,7 @@ GetLatest(){
     if [[  -n ${DBM_CREATE_DCRIPTS_ONLY} ]]; then
         CMDLINE=$CMDLINE'-CreateScriptsOnly "'$DBM_CREATE_DCRIPTS_ONLY'" '
     fi
-    CMDLINE=$CMDLINE' -Server "'$DBM_SERVER_ADDRESS'" -AuthType "'$DBM_AUTH_TYPE'" -UserName "'$DBM_USERNAME'" -Password "'$DBM_PWD'"'
+    CMDLINE=$CMDLINE' -Server "'$DBM_SERVER_ADDRESS'" -AuthType "'$DBM_AUTH_TYPE'" -UserName "'$DBM_USERNAME'" -Password "'$DBMAESTRO_PASSWORD'"'
     echo "$CMDLINE"
     eval "$CMDLINE"
 }

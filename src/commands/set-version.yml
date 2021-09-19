@@ -58,12 +58,9 @@ steps:
         DBM_PASSWORD: << parameters.password >>
       name: Set version
       command: |
-        if [ -z "$DBM_PASSWORD" ]
+        if [ -z "$DBMAESTRO_PASSWORD" ]
         then
-          echo "Using global password variable"
-          DBM_PWD=$DBMAESTRO_PASSWORD
-        else
-          echo "Using local password variable"
-          DBM_PWD=$DBM_PASSWORD
+          echo "DBMAESTRO_PASSWORD variable is not set"
+          exit 1
         fi
-        java -jar "$DBM_TOOL_PATH/DBmaestroAgent.jar" -SetVersion -ProjectName "$DBM_PROJECT_NAME" -EnvName "$DBM_ENVIRONMENT_NAME" -PackageName "$DBM_PACKAGE_NAME" -Force "$DBM_FORCE" -Server "$DBM_SERVER_ADDRESS" -AuthType "$DBM_AUTH_TYPE" -UseSSL "$DBM_USE_SSL" -UserName "$DBM_USERNAME" -Password "$DBM_PWD"
+        java -jar "$DBM_TOOL_PATH/DBmaestroAgent.jar" -SetVersion -ProjectName "$DBM_PROJECT_NAME" -EnvName "$DBM_ENVIRONMENT_NAME" -PackageName "$DBM_PACKAGE_NAME" -Force "$DBM_FORCE" -Server "$DBM_SERVER_ADDRESS" -AuthType "$DBM_AUTH_TYPE" -UseSSL "$DBM_USE_SSL" -UserName "$DBM_USERNAME" -Password "$DBMAESTRO_PASSWORD"
